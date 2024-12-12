@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Match</title>
+    <link rel="icon" href="https://via.placeholder.com/32" type="image/png">
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #444;
+            background: #F7F7F7;
+        }
+
+        h1, h2, h3, p {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #66B3A6;
+        }
+
+        /* Taskbar */
+        .taskbar {
+            background-color: #66B3A6;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .taskbar a {
+            margin: 0 15px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .taskbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h2 {
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        /* Modern Form Style */
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        form label {
+            flex: 1 0 100%;
+            font-weight: bold;
+        }
+
+        form input, form select, form button {
+            padding: 10px;
+            font-size: 1rem;
+            width: calc(50% - 20px);
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        form button {
+            background: #66B3A6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        form button:hover {
+            background: #558E82;
+        }
+
+        /* Section Styling */
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h1 {
+            font-size: 2.5rem;
+            color: #444;
+        }
+
+        .section-title p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Maps */
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        /* Image Recommendations */
+        .image-recommendations {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .image-recommendations img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #66B3A6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            form input, form select, form button {
+                width: 100%;
+            }
+
+            .taskbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .taskbar a {
+                margin: 5px 0;
+            }
+
+            .image-recommendations {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-recommendations img {
+                width: 100%;
+                max-width: 300px;
+                margin: 10px 0;
+ }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Text -->
+    <div class="logo" style="text-align: center; margin: 20px 0;">
+        <h1 style="font-family: 'The Knot', serif; color: #66B3A6;">Perfect Match</h1>
+    </div>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <div><a href="#home" onclick="showSection('home')">Beranda</a></div>
+        <div>
+            <a href="#recommendation" onclick="showSection('recommendation')">Rekomendasi</a>
+            <a href="#knowledge" onclick="showSection('knowledge')">Pengetahuan</a>
+            <a href="#butik" onclick="showSection('butik')">Maps Butik</a>
+            <a href="#contact" onclick="showSection('contact')">Kontak</a>
+        </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <div id="home" class="container">
+        <div class="section-title">
+            <h1>Welcome, Perfect Match!</h1>
+            <p>Platform rekomendasi untuk membantu Anda menemukan gaun atau jas terbaik sesuai kebutuhan Anda.</p>
+        </div>
+        <p>Perfect Match provides personalized solutions tailored to your height, weight, skin color, and body shape.</p>
+        <p>We believe that every individual has their own uniqueness, and we are here to help you stand out on your special day.</p>
+        <p>Feel free to explore our recommendations and find your dream gown or suit!</p>
+        <p>Enjoy a memorable experience in preparing for your wedding.</p>
+
+        <!-- Image Recommendations -->
+        <div class="image-recommendations">
+            <img src="images/slider2.jpg" alt="Gaun 1">
+            <img src="images/slider1.jpg" alt="Gaun 2">
+            <img src="images/slider5.jpg" alt="Jas 1">
+            <img src="images/slider3.jpg" alt="Jas 2">
+        </div>        
+    </div>
+
+    <!-- Recommendation Form -->
+    <div id="recommendation" class="container hidden">
+        <h2>Rekomendasi Gaun dan Jas Pengantin</h2>
+        <form id="recommendation-form">
+            <label>Jenis Kelamin:</label>
+            <select name="gender" required>
+                <option value="">Pilih Jenis Kelamin</option>
+                <option value="male">Laki-laki</option>
+                <option value="female">Perempuan</option>
+            </select>
+
+            <label>Warna Kulit:</label>
+            <select id="skin_color" required>
+                <option value="">Pilih Warna Kulit</option>
+                <option value="cerah">Cerah</option>
+                <option value="sawo matang">Sawo Matang</option>
+                <option value="gelap">Gelap</option>
+            </select>
+
+            <label>Bentuk Tubuh:</label>
+            <select id="body_shape" required>
+                <option value="">Pilih Bentuk Tubuh</option>
+                <option value="hourglass">Hourglass</option>
+                <option value="pear">Pear</option>
+                <option value="apple">Apple</option>
+            </select>
+
+            <label>Tinggi Badan (cm):</label>
+            <input type="number" id="height" placeholder="Masukkan tinggi badan Anda" required>
+
+            <label>Berat Badan (kg):</label>
+            <input type="number" id="weight" placeholder="Masukkan berat badan Anda" required>
+
+            <button type="submit">Dapatkan Rekomendasi</button>
+        </form>
+    </div>
+
+    <!-- Recommendation Result -->
+    <div id="result" class="container hidden">
+        <h2>Hasil Rekomendasi Anda</h2>
+        <div id="recommendation-output">
+            <p><strong>Jenis Kelamin:</strong> <span id="result-gender"></span></p>
+            <p><strong>Warna Kulit:</strong> <span id="result-skin"></span></p>
+            <p><strong>Bentuk Tubuh:</strong> <span id="result-body"></span></p>
+            <p><strong>Tinggi Badan:</strong> <span id="result-height"></span> cm</p>
+            <p><strong>Berat Badan:</strong> <span id="result-weight"></span> kg</p>
+            <p><strong>Rekomendasi:</strong> <span id=" result-recommendation"></span></p>
+            <p><strong>Penjelasan:</strong> <span id="result-explanation"></span></p>
+        </div>
+    </div>
+
+    <!-- Knowledge Section -->
+    <div id="knowledge" class="container hidden">
+        <h2>Pengetahuan Pranikah</h2>
+        <div class="knowledge-item">
+            <h3>1. Persiapan Mental</h3>
+            <p>Menikah adalah langkah besar dalam hidup. Pastikan Anda dan pasangan siap secara mental untuk menghadapi tantangan yang mungkin muncul.</p>
+        </div>
+        <div class="knowledge-item">
+            <h3>2. Rencana Keuangan</h3>
+            <p>Diskusikan anggaran pernikahan dan rencana keuangan jangka panjang. Ini penting untuk menghindari masalah di masa depan.</p>
+        </div>
+        <div class="knowledge-item">
+            <h3>3. Komunikasi yang Baik</h3>
+            <p>Komunikasi yang terbuka dan jujur antara pasangan sangat penting untuk membangun hubungan yang sehat.</p>
+        </div>
+        <div class="knowledge-item">
+            <h3>4. Memilih Vendor</h3>
+            <p>Pilih vendor yang dapat dipercaya untuk membantu mewujudkan pernikahan impian Anda. Lakukan riset dan baca ulasan sebelum membuat keputusan.</p>
+        </div>
+        <div class="knowledge-item">
+            <h3>5. Memahami Keluarga</h3>
+            <p>Diskusikan dengan keluarga masing-masing untuk memahami harapan dan tradisi yang mungkin perlu diikuti.</p>
+        </div>
+        <div class="knowledge-item">
+            <h3>6. Menentukan Tanggal Pernikahan</h3>
+            <p>Pilih tanggal yang sesuai untuk kedua belah pihak dan pastikan tidak ada konflik dengan acara penting lainnya.</p>
+        </div>
+        <div class="knowledge-item">
+            <h3>7. Menyusun Daftar Tamu</h3>
+            <p>Siapkan daftar tamu yang akan diundang dan pastikan untuk mengirimkan undangan dengan cukup waktu.</p>
+        </div>
+        <div class="knowledge-item">
+            <h3>8. Memilih Tema Pernikahan</h3>
+            <p>Tentukan tema pernikahan yang mencerminkan kepribadian Anda dan pasangan, serta suasana yang ingin diciptakan.</p>
+        </div>
+        <div class="knowledge-item">
+            <h3>9. Menyiapkan Rencana Cadangan</h3>
+            <p>Selalu siapkan rencana cadangan untuk mengantisipasi hal-hal yang tidak terduga pada hari H.</p>
+        </div>
+        <div class="knowledge-item">
+            <h3>10. Menikmati Proses</h3>
+            <p>Ingatlah untuk menikmati setiap momen dalam proses persiapan pernikahan, karena ini adalah pengalaman yang berharga.</p>
+        </div>
+    </div>
+
+    <!-- Butik Section -->
+    <div id="butik" class="container hidden">
+        <h2>Butik Terdekat di Jakarta</h2>
+        <div id="map"></div>
+        <p>Berikut adalah beberapa butik yang dapat Anda kunjungi:</p>
+        <ul>
+            <li>Butik A - Jl. Melati No. 10, Jakarta</li>
+            <li>Butik B - Jl. Mawar No. 20, Jakarta</li>
+            <li>Butik C - Jl. Anggrek No. 30, Jakarta</li>
+            <li>Butik D - Jl. Kenanga No. 40, Jakarta</li>
+        </ul>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact" class="container hidden">
+        <h2>Kontak Kami</h2>
+        <p>Email: <a href="mailto:info@perfectmatch.com">info@perfectmatch.com</a></p>
+        <p>Telepon: +62 123 456 789</p>
+        <p>Alamat: Jl. Anggrek No. 45, Jakarta, Indonesia</p>
+    </div>
+
+    <footer>
+        © 2024 Perfect Match. Semua Hak Dilindungi.
+    </footer>
+
+    <script>
+        function showSection(section) {
+            document.querySelectorAll('.container').forEach(s => s.classList.add('hidden'));
+            document.getElementById(section).classList.remove('hidden');
+        }
+
+        document.getElementBy ('recommendation-form html').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const gender = this.gender.value;
+            const skinColor = this.skin_color.value;
+            const bodyShape = this.body_shape.value;
+            const height = this.height.value;
+            const weight = this.weight.value;
+
+            document.getElementById('result-gender').textContent = gender;
+            document.getElementById('result-skin').textContent = skinColor;
+            document.getElementById('result-body').textContent = bodyShape;
+            document.getElementById('result-height').textContent = height;
+            document.getElementById('result-weight').textContent = weight;
+
+            // Logic for recommendations based on inputs
+            let recommendation = '';
+            let explanation = '';
+            if (gender === 'female') {
+                recommendation = 'Gaun berwarna cerah';
+                explanation = 'Warna cerah cocok untuk kulit cerah dan bentuk tubuh hourglass. Gaun ini akan menonjolkan lekuk tubuh Anda dan memberikan kesan anggun.';
+            } else {
+                recommendation = 'Jas berwarna gelap';
+                explanation = 'Warna gelap memberikan kesan elegan dan cocok untuk semua bentuk tubuh. Jas ini akan memberikan kesan maskulin dan percaya diri.';
+            }
+            explanation += ' Selain itu, tinggi badan dan berat badan Anda juga mempengaruhi pilihan. Jika Anda memiliki tinggi badan di atas rata-rata, gaun panjang atau jas slim fit akan sangat cocok. Jika berat badan Anda lebih dari rata-rata, pilihlah potongan yang lebih longgar untuk kenyamanan.';
+
+            document.getElementById('result-recommendation').textContent = recommendation;
+            document.getElementById('result-explanation').textContent = explanation;
+
+            showSection('result');
+        });
+    </script>
+</body>
+</html>
