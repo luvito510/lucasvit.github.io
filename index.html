@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Match</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Taskbar -->
+    <nav class="taskbar">
+        <a href="#" class="logo" onclick="navigate('beranda')">
+            <img src="assets/images/logopm.png" alt="Perfect Match Logo" width="150" height="auto">
+        </a>        
+        <div>
+            <a href="#" onclick="navigate('beranda')">Beranda</a>
+            <a href="#" onclick="navigate('butik')">Butik</a>
+            <a href="#" onclick="navigate('kontak')">Kontak</a>
+            <a href="#" onclick="navigate('pengetahuan')">Pengetahuan</a>
+            <a href="#" onclick="navigate('kalkulator')">Form Rekomendasi</a>
+        </div>
+    </nav>
+
+    <!-- Konten Utama -->
+   <!-- Photo Gallery in Beranda -->
+<section id="beranda" class="hero">
+    <h1>Welcome, Future Bride and Groom!</h1>
+    <p>"Bringing You Together in Style, Every Detail Perfectly Matched."</p>
+    <div class="photo-gallery">
+        <img src="assets/images/slider2.jpg" alt="Gaun A-Line" onclick="showPhotoDetail('gaun-a-line')">
+        <img src="assets/images/mermaid.jpg" alt="Gaun Mermaid" onclick="showPhotoDetail('gaun-mermaid')">
+        <img src="assets/images/sheath.jpg" alt="Gaun Sheath" onclick="showPhotoDetail('gaun-sheath')">
+    </div>
+</section>
+
+<!-- Individual Photo Descriptions -->
+<section id="gaun-a-line" class="hidden">
+    <h2>Gaun A-Line</h2>
+    <p>Gaun A-Line memiliki siluet yang pas di bagian atas dan melebar mulai dari pinggang ke bawah, menyerupai bentuk huruf "A". Cocok untuk berbagai bentuk tubuh.</p>
+    <button onclick="navigate('beranda')">Kembali</button>
+</section>
+
+<section id="gaun-mermaid" class="hidden">
+    <h2>Gaun Mermaid</h2>
+    <p>Gaun Mermaid menonjolkan lekuk tubuh dengan potongan ketat hingga lutut, kemudian melebar seperti ekor ikan duyung. Ideal untuk tubuh berbentuk jam pasir.</p>
+    <button onclick="navigate('beranda')">Kembali</button>
+</section>
+
+<section id="gaun-sheath" class="hidden">
+    <h2>Gaun Sheath</h2>
+    <p>Gaun Sheath memiliki potongan lurus dari atas hingga bawah, memberikan tampilan sederhana namun elegan. Cocok untuk tubuh ramping dan tinggi.</p>
+    <button onclick="navigate('beranda')">Kembali</button>
+</section>
+
+    <section id="butik" class="hidden">
+        <h2>Butik</h2>
+        <p>Anda sedang mencari tempat untuk membuat gaun pengantin dan jas yang sempurna? Tenang saja! </p>
+        <p>Kami merekomendasikan beberapa butik terbaik yang wajib anda kunjungi dibawah ini :</p>
+        <h3>Butik Populer</h3>
+        <ul>
+            <li>Elora Bridal - Jl. Mahakam No.8, Kebayoran Baru, Jakarta Selatan, 12150.</li>
+            <li>The Bridal Room - Jl. Kemang Raya No.27, Jakarta Selatan, 12730.</li>
+            <li>Dewi Saroja Bridal - Jl. Jend. Sudirman Kav. 72, SCBD, Jakarta Selatan, 12190.</li>
+            <li>Cocoon Bridal & Atelier - Jl. Lebak Bulus IV No.5, Jakarta Selatan, 12440.</li>
+            <li>Delapan Padi - Jl. Cipete Raya No. 19A, Jakarta Selatan, 12410.</li>
+            <li>Fay Diane Bridal & Couture - Sumber Endah 74, Bandung, Jawa Barat, 40222.</li>
+            <li>Yong Hana Makeupart - Jl. Riau No. 7, Bandung, Jawa Barat, 40111.</li>
+            <li>Elleonora Shindy - Jl. Mekar Indah No. 34, Bandung, Jawa Barat, 40114.</li>
+            <li>Crystal Clarissa - Jl. Sumur Bandung No. 16, Bandung, Jawa Barat, 40112.</li>
+            <li>Debby Hardinata - Jl. Merdeka No. 65, Bandung, Jawa Barat, 40111.</li>
+            <li>Wedding Island - Jl. Sersan Bajuri No. 11, Bandung, Jawa Barat, 40133.</li>
+            <li>R'Jayanti MakeUp & Wedding Gallery - Jl. Dipatiukur No. 9, Bandung, Jawa Barat, 40132.</li>
+            <li>Bright by Maria Damayanti - Jl. Sultan Agung No. 45, Bandung, Jawa Barat, 40124.</li>
+            <li>Delapan Padi - Jl. Cipaganti No. 71, Bandung, Jawa Barat, 40141.</li>
+            <li>Fay Diane Bridal & Couture - Sumber Endah 74, Bandung, Jawa Barat, 40222.</li>
+        </ul>
+    </section>
+
+    <section id="kontak" class="hidden">
+        <h2>Kontak Kami</h2>
+        <p>Email: <a href="mailto:info@perfectmatch.com">info@perfectmatch.com</a></p>
+        <p>Telepon: +62 123 456 789</p>
+        <p>Alamat: Jl. Anggrek No. 45, Jakarta, Indonesia</p>
+    </section>
+
+    <section id="pengetahuan" class="hidden">
+        <h2>Pengetahuan</h2>
+        <p>Pilih topik untuk mempelajari lebih lanjut:</p>
+        
+        <div class="photo-gallery">
+            <div class="knowledge-button" onclick="showKnowledge('kulit')">
+                <img src="assets/images/kulit.jpg" alt="Warna Kulit">
+                <p>Warna Kulit</p>
+            </div>
+            <div class="knowledge-button" onclick="showKnowledge('bentuk')">
+                <img src="assets/images/bentuk.jpg" alt="Bentuk Tubuh">
+                <p>Bentuk Tubuh</p>
+            </div>
+            <div class="knowledge-button" onclick="showKnowledge('pernikahan')">
+                <img src="assets/images/pernikahan.jpg" alt="Perjanjian Pra Nikah">
+                <p>Perjanjian Pra Nikah</p>
+            </div>
+            <div class="knowledge-button" onclick="showKnowledge('kesehatan')">
+                <img src="assets/images/kesehatan.jpg" alt="Kesehatan Pengantin">
+                <p>Kesehatan Pengantin</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="kulit" class="hidden">
+        <h2>Warna Kulit</h2>
+        <p>Penjelasan tentang bagaimana memilih warna pakaian yang sesuai dengan warna kulit Anda.</p>
+        <button onclick="navigate('pengetahuan')">Kembali</button>
+    </section>
+    
+    <section id="bentuk" class="hidden">
+        <h2>Bentuk Tubuh</h2>
+        <p>Panduan tentang memilih busana pengantin yang cocok dengan bentuk tubuh Anda.</p>
+        <button onclick="navigate('pengetahuan')">Kembali</button>
+    </section>
+    
+    <section id="pernikahan" class="hidden">
+        <h2>Perjanjian Pra Nikah</h2>
+        <p>Informasi mengenai perjanjian pra nikah dan hal-hal yang perlu disiapkan sebelum pernikahan.</p>
+        <button onclick="navigate('pengetahuan')">Kembali</button>
+    </section>
+    
+    <section id="kesehatan" class="hidden">
+        <h2>Kesehatan Pengantin</h2>
+        <p>Tips untuk menjaga kesehatan pengantin sebelum hari pernikahan, termasuk pola makan dan latihan.</p>
+        <button onclick="navigate('pengetahuan')">Kembali</button>
+    </section>    
+
+    <section id="kalkulator" class="hidden">
+        <h2>Rekomendasi</h2>
+        <div class="calculator">
+            <form id="form-rekomendasi">
+                <label for="gender">Jenis Kelamin:</label>
+                <select id="gender">
+                    <option value="male">Laki-Laki</option>
+                    <option value="female">Perempuan</option>
+                </select><br><br>
+
+                <label for="skin">Warna Kulit:</label>
+                <select id="skin">
+                    <option value="fair">Putih</option>
+                    <option value="tan">Kuning Langsat</option>
+                    <option value="dark">Sawo Matang</option>
+                </select><br><br>
+
+                <label for="body">Bentuk Tubuh:</label>
+                <select id="body">
+                    <option value="slim">Langsing</option>
+                    <option value="average">Sedang</option>
+                    <option value="curvy">Berisi</option>
+                </select><br><br>
+
+                <label for="height">Tinggi Badan (cm):</label>
+                <input type="number" id="height" min="100" max="250"><br><br>
+
+                <label for="weight">Berat Badan (kg):</label>
+                <input type="number" id="weight" min="30" max="200"><br><br>
+
+                <button type="button" onclick="calculate()">Submit</button>
+            </form>
+
+            <!-- Section to display results -->
+            <div id="result-section" class="hidden">
+                <h3>Hasil Rekomendasi</h3>
+                <p id="explanation">Isi formulir di atas untuk mendapatkan saran gaun dan jas terbaik berdasarkan data Anda.</p>
+                <h4>Detail Data Anda :</h4>
+                <p id="detail"></p>
+                <button onclick="navigate('beranda')">Kembali</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="brand-info">
+                <h2>Perfect Match</h2>
+                <p>Rekomendasi Jas dan Gaun Pengantin</p>
+            </div>
+            <div class="social-icons">
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Perfect Match &copy; 2024. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPhotoDetail(photoId) {
+    // Sembunyikan semua seksi
+    document.querySelectorAll('section').forEach(sec => {
+        sec.classList.add('hidden');
+    });
+
+    // Tampilkan seksi sesuai foto yang dipilih
+    document.getElementById(photoId).classList.remove('hidden');
+}
+
+
+        function calculate() {
+            const gender = document.getElementById('gender').value;
+            const skin = document.getElementById('skin').value;
+            const body = document.getElementById('body').value;
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+
+            let explanation = '';
+            let detailText = `Jenis Kelamin: ${gender === 'male' ? 'Laki-Laki' : 'Perempuan'}\nWarna Kulit: ${skin}\nBentuk Tubuh: ${body}\nTinggi Badan: ${height} cm\nBerat Badan: ${weight} kg`;
+
+            if (gender === 'male') {
+                if (body === 'slim') {
+                    explanation = `Anda adalah laki-laki dengan tubuh langsing dan kulit ${skin}. Anda cocok dengan jas berwarna gelap seperti hitam, biru navy, atau abu-abu.`;
+                } else if (body === 'average') {
+                    explanation = `Anda adalah laki-laki dengan bentuk tubuh sedang dan kulit ${skin}. Jas dengan potongan klasik berwarna biru atau abu-abu muda akan cocok.`;
+                } else if (body === 'curvy') {
+                    explanation = `Anda adalah laki-laki dengan tubuh berisi dan kulit ${skin}. Pilihlah jas dengan potongan slim-fit.`;
+                }
+            } else {
+                if (body === 'slim') {
+                    explanation = `Anda adalah perempuan dengan tubuh langsing dan kulit ${skin}. Gaun dengan potongan A-line.`;
+                } else if (body === 'average') {
+                    explanation = `Anda adalah perempuan dengan bentuk tubuh sedang dan kulit ${skin}. Gaun dengan potongan empire-line atau ball gown akan memberikan.`;
+                } else if (body === 'curvy') {
+                    explanation = `Anda adalah perempuan dengan tubuh berisi dan kulit ${skin}. Gaun dengan potongan mermaid.`;
+                }
+            }
+
+            document.getElementById('explanation').textContent = explanation;
+            document.getElementById('detail').textContent = detailText;
+
+            // Hide the form and show the result section
+            document.getElementById('form-rekomendasi').classList.add('hidden');
+            document.getElementById('result-section').classList.remove('hidden');
+        }
+        
+        function navigate(section) {
+    // Sembunyikan semua seksi
+    document.querySelectorAll('section').forEach(sec => {
+        sec.classList.add('hidden');
+        });
+
+        // Tampilkan seksi yang dipilih
+        document.getElementById(section).classList.remove('hidden');
+    }
+
+    function showKnowledge(topic) {
+        // Navigasi langsung ke topik tertentu
+        navigate(topic);
+    }
+        
+    </script>
+</body>
+</html>
